@@ -1,7 +1,9 @@
-# Copyright (c) 2021 Nordic Semiconductor ASA
+# Copyright (c) 2021 Marc Aldrich
 # SPDX-License-Identifier: Apache-2.0
-#
-# This CMake file is picked by the Zephyr build system because it is defined
-# as the module CMake entry point (see zephyr/module.yml).
 
-add_subdirectory(drivers)
+set(PINETIME_DIR ${CMAKE_CURRENT_LIST_DIR} CACHE PATH "Pinetime root directory")
+
+zephyr_include_directories(include)
+
+add_subdirectory(drivers/sensor)
+add_subdirectory(subsys)
